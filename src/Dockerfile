@@ -17,7 +17,6 @@ LABEL maintainer="Dublok"
 ARG TARGETPLATFORM=""
 ARG ARCH=""
 
-
 RUN echo "Building for platform: ${TARGETPLATFORM}"
 RUN echo "Architecture set to: ${ARCH}"
 
@@ -27,13 +26,13 @@ RUN apk add --no-cache curl bash jq && \
     apk del curl
 
 # add local files
-COPY root /
+COPY src/root /
 
 # Set working directory
 WORKDIR /app
 
 # Copy the entrypoint script into the container
-COPY entrypoint.sh /app/entrypoint.sh
+COPY src/entrypoint.sh /app/entrypoint.sh
 
 # Make the entrypoint script executable
 RUN chmod +x /app/entrypoint.sh
