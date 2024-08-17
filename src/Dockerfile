@@ -1,10 +1,12 @@
-# Use an official lightweight image
-FROM alpine:3.19
+FROM dublok/base-linux:alpine-v1
 
 # Metadata as labels
+LABEL org.opencontainers.image.source=""
+LABEL org.opencontainers.image.source=https://github.com/DockForge/SBOMinify
+LABEL org.opencontainers.image.description="A Docker image to capture and list installed packages and their versions in a Docker image."
+LABEL org.opencontainers.image.licenses=GPL-3.0
 LABEL maintainer="Dublok"
 LABEL description="A Docker image to capture and list installed packages and their versions in a Docker image."
-LABEL org.opencontainers.image.source https://github.com/DockForge/SBOMinify
 
 # Set working directory
 WORKDIR /app
