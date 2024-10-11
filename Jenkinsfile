@@ -1,3 +1,5 @@
 @Library('jenkins-pipelines') _
 
-generic_image_generator(BASE_OS: '')
+timeout(time: 30, unit: 'MINUTES') {
+    generic_image_generator(BASE_OS: '')
+}
